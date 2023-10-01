@@ -22,4 +22,3 @@ while var:
     elif choice == '4' or 'sop':
         print("Exiting ........")
         sys.exit()
-
