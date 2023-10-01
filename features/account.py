@@ -18,3 +18,9 @@ def account():
     else:
         print("Opp! please register !")
     input()
+
+def hight_score():
+    print("------------ Your high-score -----------")
+    for user_info in user:
+        print(f'Your hight_score: ',user_info.high_score)
+    input()
