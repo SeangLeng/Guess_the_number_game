@@ -1,14 +1,15 @@
 import random
 import re
 
-from storage.data_storage import user
+from storage.data_storage import *
 
 result = 0
 user_score = []
 win = True
 
 def game():
-    global result, name, user_score, win, choose
+    global result, name, user_score, win, choose, user_score_add
+
     choice = []
     win = True
     while win:
@@ -31,8 +32,10 @@ def game():
                     users.money += 0.205
                     name = users.email
                     user_score.append(users.high_score)
+                    user_score_add = Score(users.email, users.phone_number, users.password, users.high_score, users.high_score)
+                    user_score_add.user_score_add()
                 choice.clear()
-                print("You are correct! Congratulations", name)
+                print("You are correct! Congratulations", name, "you have")
                 for users in user:
                     print("You have", users.high_score, "score")
                     print("You have $", users.money)

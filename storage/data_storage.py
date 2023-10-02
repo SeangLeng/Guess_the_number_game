@@ -1,6 +1,7 @@
 import json
 
 user = []
+user_score = []
 class user_info:
     def __init__(self, email, phone_number, password, high_score, money):
         self.email = email
@@ -8,6 +9,14 @@ class user_info:
         self.password = password
         self.high_score = high_score
         self.money = money
+
+class Score(user_info):
+    def user_score_add(self):
+        user_score.append(self.high_score)
+
+    def show_score(self):
+        for item in user_score:
+            print(item, end=' ')
 
 def save_account():
     data = {
